@@ -15,12 +15,12 @@ function Home() {
     const lastProducts = products.slice(0, 8);
     useEffect(() => {
         axios.get("/products").then(({ data }) => dispatch(updateProducts(data)));
-    }, []);
+    });
     return (
         <div>
-            <img src=" https://res.cloudinary.com/learn-code-10/image/upload/v1653947013/yqajnhqf7usk56zkwqi5.png" className="home-banner"alt="home_slider"/>
+            <img src="https://res.cloudinary.com/dtcpdpnsj/image/upload/v1679139248/sample.jpg" className="container-fluid mx-auto w-full max-h-[300px] home-banner"alt="home_slider"/>
             <div className="featured-products-container container mt-4">
-                <h2>Last products</h2>
+                <h2>Latest Updated Products</h2>
                 {/* last products here */}
                 <div className="d-flex justify-content-center flex-wrap">
                     {lastProducts.map((product) => (

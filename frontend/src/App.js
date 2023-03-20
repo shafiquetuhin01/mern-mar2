@@ -1,22 +1,22 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { io } from "socket.io-client";
+import "./App.css";
 import Navigation from "./components/Navigation";
+import ScrollToTop from "./components/ScrollToTop";
+import { addNotification } from "./features/userSlice";
+import AdminDashboard from "./pages/AdminDashboard";
+import CartPage from "./pages/CartPage";
+import CategoryPage from "./pages/CategoryPage";
+import EditProductPage from "./pages/EditProductPage";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import { useDispatch, useSelector } from "react-redux";
 import NewProduct from "./pages/NewProduct";
-import ProductPage from "./pages/ProductPage";
-import CategoryPage from "./pages/CategoryPage";
-import ScrollToTop from "./components/ScrollToTop";
-import CartPage from "./pages/CartPage";
 import OrdersPage from "./pages/OrdersPage";
-import AdminDashboard from "./pages/AdminDashboard";
-import EditProductPage from "./pages/EditProductPage";
-import { useEffect } from "react";
-import { io } from "socket.io-client";
-import { addNotification } from "./features/userSlice";
+import ProductPage from "./pages/ProductPage";
+import Signup from "./pages/Signup";
 
 function App() {
     const user = useSelector((state) => state.user);
@@ -35,7 +35,7 @@ function App() {
                 dispatch(addNotification(msgObj));
             }
         });
-    }, []);
+    });
     return (
         <div className="App">
             <BrowserRouter>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./Signup.css";
 import { useSignupMutation } from "../services/appApi";
+import "./Signup.css";
 
 function Signup() {
     const [email, setEmail] = useState("");
@@ -43,7 +43,7 @@ function Signup() {
                             </Button>
                         </Form.Group>
                         <p className="pt-3 text-center">
-                            Don't have an account? <Link to="/login">Login</Link>{" "}
+                            Already have an account? <Link to="/login">Login</Link>{" "}
                         </p>
                     </Form>
                 </Col>

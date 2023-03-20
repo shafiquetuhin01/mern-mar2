@@ -1,8 +1,8 @@
-import axios from "../axios";
 import React, { useRef, useState } from "react";
-import { Navbar, Button, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
+import axios from "../axios";
 import { logout, resetNotifications } from "../features/userSlice";
 import "./Navigation.css";
 
@@ -33,7 +33,7 @@ function Navigation() {
         <Navbar bg="light" expand="lg">
             <Container>
                 <LinkContainer to="/">
-                    <Navbar.Brand>Ecomern</Navbar.Brand>
+                    <Navbar.Brand>Shafique Store</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
